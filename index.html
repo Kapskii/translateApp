@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+</head>
+
+<body>
+    <script>
+        const wordsEng = ["Wassup", "Bye", "How are you?", "programmer"];
+        const translate = ["Здарова", "Пока", "Как дела?", "программист"];
+        const finishMessage = 'Молодец!';
+        const finishMessage1 = 'Старайся лучше!';
+        const minPersent = 50;
+
+        let answerCoutn = 0;
+        let words = wordsEng.length
+
+
+        wordsEng.forEach((elem, index) => {
+            let userAnswer = prompt(elem);
+            alert(userAnswer.toLowerCase() === translate[index].toLowerCase());
+            if (userAnswer === translate[index].toLowerCase()) {
+                answerCoutn += 1;
+            }
+        });
+
+        const correctAnswerPersent = answerCoutn / words * 100;
+        if (correctAnswerPersent > minPersent) {
+            alert(finishMessage)
+        } else {
+            alert(finishMessage1)
+        }
+
+    </script>
+</body>
